@@ -4,10 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import Film from "../../components/Film/Film";
 import MultipleRowSlick from "../../components/ReactSlick/MultipleRowSlick";
 import { layDanhSachPhimAction } from "../../redux/actions/QuanLyPhimActions";
+import {layDanhSachHeThongRapAction} from '../../redux/actions/QuanLyRapAction';
 
 export default function Home(props) {
-
+  
   const { arrFilm } = useSelector((state) => state.QuanLyPhimReducer);
+  const { heThongRapChieu } = useSelector((state) => state.QuanLyRapReducer);
 
   const dispatch = useDispatch();
 
@@ -17,10 +19,15 @@ export default function Home(props) {
   //   });
   // };
 
-  useEffect(()=>{
+  useEffect(() => {
+
     const action = layDanhSachPhimAction();
     dispatch(action); //dispatch function từ thunk
-  },[])
+    dispatch(layDanhSachHeThongRapAction());
+
+  }, []);
+
+
   return (
     <div>
       <section class="text-gray-600 body-font">
@@ -30,7 +37,7 @@ export default function Home(props) {
         </div>
       </section>
       <div className="mx-36">
-        <HomeMenu />
+        <HomeMenu heThongRapChieu={heThongRapChieu} />
       </div>
     </div>
   );
