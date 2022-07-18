@@ -5,6 +5,7 @@ import Film from "../../components/Film/Film";
 import MultipleRowSlick from "../../components/ReactSlick/MultipleRowSlick";
 import { layDanhSachPhimAction } from "../../redux/actions/QuanLyPhimActions";
 import {layDanhSachHeThongRapAction} from '../../redux/actions/QuanLyRapAction';
+import HomeCarousel from "../../templates/HomeTemplate/layout/HomeCarousel/HomeCarousel";
 
 export default function Home(props) {
   
@@ -30,6 +31,7 @@ export default function Home(props) {
 
   return (
     <div>
+      <HomeCarousel />
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
           <MultipleRowSlick arrFilm={arrFilm} />

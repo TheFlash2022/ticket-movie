@@ -1,5 +1,6 @@
 import React from "react";
 import "./Film_Flip.css";
+import { NavLink } from "react-router-dom";
 
 export default function Film_Flip(props) {
   const { item } = props;
@@ -44,8 +45,8 @@ export default function Film_Flip(props) {
           </div>
         </div>
       </div>
-      <div className=" text-center cursor-pointer py-2  my-2 text-success-50 font-bold">
-        ĐẶT VÉ
+      <div className="bg-indigo-300 text-center cursor-pointer py-2 my-2 text-success-50 font-bold">
+        <NavLink to={`/detail/${item.maPhim}`}>ĐẶT VÉ</NavLink>
       </div>
     </div>
   );

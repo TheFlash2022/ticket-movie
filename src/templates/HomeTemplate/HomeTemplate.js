@@ -13,7 +13,7 @@ export default function HomeTemplate(props) {
         return (
           <Fragment>
             <Header {...propsRoute} />
-            <HomeCarousel {...propsRoute} />
+            
             <props.component {...propsRoute} />
             <Footer />
           </Fragment>
